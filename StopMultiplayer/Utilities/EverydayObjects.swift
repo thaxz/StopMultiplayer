@@ -21,3 +21,7 @@ let everydayObjects: [String] = [
     "koala", "lemur", "monkey", "narwhal", "octopus", "panda", "quokka", "rhinoceros", "snake", "toucan",
     "unicorn", "vulture", "walrus", "xylophone", "yak", "zebra"
 ]
+
+// MARK: Put this somewhere else
+
+let maxTimerRemaining = 100

@@ -19,3 +19,12 @@ enum PlayerAuthState: String {
     case restricted = "You are not allowed to play multiplayer games"
     
 }
+
+// To see past guesses
+
+struct PastGuess: Identifiable {
+    
+    let id = UUID()
+    var message: String
+    var isCorrect: Bool
+}
