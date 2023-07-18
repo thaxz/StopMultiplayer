@@ -12,15 +12,49 @@ struct MenuView: View {
     @ObservedObject var matchManager: MatchManager
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-        Image("logo")
+        ZStack {
+            Image("menuBg")
                 .resizable()
-                .scaledToFit()
-                .padding(30)
-            Spacer()
+                .scaledToFill()
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                Text(matchManager.authenticationState.rawValue)
+                    .font(.headline)
+                    .foregroundColor(Color.theme.yellow)
+                    .fontWeight(.semibold)
+                    .padding(.vertical, 20)
+                Spacer()
+                
+                Button {
+                    // do something
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(
+                                matchManager.authenticationState != .authenticaded || matchManager.isInGame ?
+                                    .gray : Color.theme.blue)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 65)
+                        Text("PLAY")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                }
+                // Não vai funcionar o botão se não estiver autenticado ou se já estiver no jogo
+                .disabled(matchManager.authenticationState != .authenticaded || matchManager.isInGame)
+                
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 30)
+            
         }
+        
     }
 }
 

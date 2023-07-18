@@ -15,6 +15,7 @@
 		E99EF33B2A673F82001369F2 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33A2A673F82001369F2 /* MatchManager.swift */; };
 		E99EF33E2A674226001369F2 /* EverydayObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33D2A674226001369F2 /* EverydayObjects.swift */; };
 		E99EF3402A674232001369F2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33F2A674232001369F2 /* Enums.swift */; };
+		E99EF3432A674748001369F2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF3422A674748001369F2 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E99EF33A2A673F82001369F2 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
 		E99EF33D2A674226001369F2 /* EverydayObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayObjects.swift; sourceTree = "<group>"; };
 		E99EF33F2A674232001369F2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E99EF3422A674748001369F2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		E99EF3252A673E48001369F2 /* StopMultiplayer */ = {
 			isa = PBXGroup;
 			children = (
+				E99EF3412A67473A001369F2 /* Extentions */,
 				E99EF33C2A673F8A001369F2 /* Utilities */,
 				E99EF3392A673F73001369F2 /* Managers */,
 				E99EF3342A673F56001369F2 /* Core */,
@@ -117,6 +120,14 @@
 				E99EF33F2A674232001369F2 /* Enums.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E99EF3412A67473A001369F2 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF3422A674748001369F2 /* Color.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 			files = (
 				E99EF3292A673E48001369F2 /* ContentView.swift in Sources */,
 				E99EF33B2A673F82001369F2 /* MatchManager.swift in Sources */,
+				E99EF3432A674748001369F2 /* Color.swift in Sources */,
 				E99EF3382A673F6F001369F2 /* MenuView.swift in Sources */,
 				E99EF3272A673E48001369F2 /* StopMultiplayerApp.swift in Sources */,
 				E99EF3402A674232001369F2 /* Enums.swift in Sources */,
