@@ -11,6 +11,10 @@
 		E99EF3292A673E48001369F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF3282A673E48001369F2 /* ContentView.swift */; };
 		E99EF32B2A673E49001369F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99EF32A2A673E49001369F2 /* Assets.xcassets */; };
 		E99EF32E2A673E49001369F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99EF32D2A673E49001369F2 /* Preview Assets.xcassets */; };
+		E99EF3382A673F6F001369F2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF3372A673F6E001369F2 /* MenuView.swift */; };
+		E99EF33B2A673F82001369F2 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33A2A673F82001369F2 /* MatchManager.swift */; };
+		E99EF33E2A674226001369F2 /* EverydayObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33D2A674226001369F2 /* EverydayObjects.swift */; };
+		E99EF3402A674232001369F2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF33F2A674232001369F2 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		E99EF3282A673E48001369F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E99EF32A2A673E49001369F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99EF32D2A673E49001369F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E99EF3372A673F6E001369F2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		E99EF33A2A673F82001369F2 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
+		E99EF33D2A674226001369F2 /* EverydayObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayObjects.swift; sourceTree = "<group>"; };
+		E99EF33F2A674232001369F2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,9 @@
 		E99EF3252A673E48001369F2 /* StopMultiplayer */ = {
 			isa = PBXGroup;
 			children = (
+				E99EF33C2A673F8A001369F2 /* Utilities */,
+				E99EF3392A673F73001369F2 /* Managers */,
+				E99EF3342A673F56001369F2 /* Core */,
 				E99EF3262A673E48001369F2 /* StopMultiplayerApp.swift */,
 				E99EF3282A673E48001369F2 /* ContentView.swift */,
 				E99EF32A2A673E49001369F2 /* Assets.xcassets */,
@@ -65,6 +76,47 @@
 				E99EF32D2A673E49001369F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E99EF3342A673F56001369F2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF3352A673F5B001369F2 /* Menu */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E99EF3352A673F5B001369F2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF3362A673F62001369F2 /* Views */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E99EF3362A673F62001369F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF3372A673F6E001369F2 /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E99EF3392A673F73001369F2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF33A2A673F82001369F2 /* MatchManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E99EF33C2A673F8A001369F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E99EF33D2A674226001369F2 /* EverydayObjects.swift */,
+				E99EF33F2A674232001369F2 /* Enums.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99EF3292A673E48001369F2 /* ContentView.swift in Sources */,
+				E99EF33B2A673F82001369F2 /* MatchManager.swift in Sources */,
+				E99EF3382A673F6F001369F2 /* MenuView.swift in Sources */,
 				E99EF3272A673E48001369F2 /* StopMultiplayerApp.swift in Sources */,
+				E99EF3402A674232001369F2 /* Enums.swift in Sources */,
+				E99EF33E2A674226001369F2 /* EverydayObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
