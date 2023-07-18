@@ -24,4 +24,4 @@ let everydayObjects: [String] = [
 
 // MARK: Put this somewhere else
 
-let maxTimerRemaining = 100
+let maxTimeRemaining = 100
