@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameOverView: View {
-    @ObservedObject var matchManager: MatchManager
+    @EnvironmentObject var matchManager: MatchManager
     var body: some View {
         ZStack {
             Image("gameOverBg")
@@ -53,6 +53,7 @@ struct GameOverView: View {
 
 struct GameOverView_Previews: PreviewProvider {
     static var previews: some View {
-        GameOverView(matchManager: MatchManager())
+        GameOverView()
+            .environmentObject(MatchManager())
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @ObservedObject var matchManager: MatchManager
+    @EnvironmentObject var matchManager: MatchManager
     
     var body: some View {
         ZStack {
@@ -60,6 +60,7 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(matchManager: MatchManager())
+        MenuView()
+            .environmentObject(MatchManager())
     }
 }
