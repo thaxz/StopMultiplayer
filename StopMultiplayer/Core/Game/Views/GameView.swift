@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// todo: refactor and take ths variable away from here
+var countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
 struct GameView: View {
     
     @EnvironmentObject var matchManager: MatchManager
@@ -45,7 +48,10 @@ struct GameView: View {
             }
             
         }
-        
+        .onReceive(countdownTimer) { time in
+            guard matchManager.isTimeKeeper else {return}
+            matchManager.remainingTime -= 1
+        }
     }
 }
 

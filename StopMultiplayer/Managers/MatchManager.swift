@@ -20,9 +20,10 @@ final class MatchManager: NSObject, ObservableObject {
     @Published var drawPrompt: String = ""
     @Published var pastGuesses: [PastGuess] = []
     
-    // Pontuation
+    // Pontuation and timer
     @Published var score = 0
     @Published var remainingTime = maxTimeRemaining
+    @Published var isTimeKeeper: Bool = false
     
     // Pencil data
     @Published var lastReceivedDrawing = PKDrawing()
@@ -99,6 +100,26 @@ final class MatchManager: NSObject, ObservableObject {
     
     // Received string
     func receivedString(_ message: String){
-        
+        let messageSplit = message.split(separator: ":")
+        guard let messagePrefix = messageSplit.first else {return}
+        let parameter = String(messageSplit.last ?? "")
+        switch messagePrefix {
+        case "began":
+            if playerUUIDKey == parameter {
+                playerUUIDKey = UUID().uuidString
+                sendString("began:\(playerUUIDKey)")
+                break
+            }
+            currentlyDrawing = playerUUIDKey < parameter
+            // Starting the game
+            isInGame = true
+            isTimeKeeper = true
+            // starting timer
+            if isTimeKeeper {
+                countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+            }
+        default:
+            break
+        }
     }
 }

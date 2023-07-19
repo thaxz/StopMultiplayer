@@ -31,7 +31,7 @@ struct MenuView: View {
                 Spacer()
                 
                 Button {
-                    // do something
+                    matchManager.startMatchMaking()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
