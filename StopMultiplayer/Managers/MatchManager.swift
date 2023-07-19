@@ -14,7 +14,7 @@ final class MatchManager: ObservableObject {
     @Published var isGameOver: Bool = false
     
     // Draw related
-    @Published var currentlyDrawing: Bool = false
+    @Published var currentlyDrawing: Bool = true
     @Published var drawPrompt: String = ""
     @Published var pastGuesses: [PastGuess] = []
     

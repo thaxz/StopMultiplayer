@@ -18,7 +18,7 @@ struct DrawingView: UIViewRepresentable {
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-            
+            // send drawing data
         }
         
     }
