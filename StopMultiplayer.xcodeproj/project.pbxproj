@@ -20,6 +20,7 @@
 		E99EF3492A674D23001369F2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF3482A674D23001369F2 /* GameView.swift */; };
 		E99EF34C2A674DAC001369F2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF34B2A674DAC001369F2 /* GameViewModel.swift */; };
 		E99EF34E2A6752E5001369F2 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EF34D2A6752E5001369F2 /* DrawingView.swift */; };
+		E9ED6C0A2A6873A500B3CC56 /* Manager+GKMatchmakerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED6C092A6873A500B3CC56 /* Manager+GKMatchmakerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E99EF34B2A674DAC001369F2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E99EF34D2A6752E5001369F2 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		E99EF34F2A676614001369F2 /* StopMultiplayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StopMultiplayer.entitlements; sourceTree = "<group>"; };
+		E9ED6C092A6873A500B3CC56 /* Manager+GKMatchmakerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manager+GKMatchmakerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				E99EF33A2A673F82001369F2 /* MatchManager.swift */,
+				E9ED6C092A6873A500B3CC56 /* Manager+GKMatchmakerDelegate.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				E99EF3432A674748001369F2 /* Color.swift in Sources */,
 				E99EF3382A673F6F001369F2 /* MenuView.swift in Sources */,
 				E99EF3492A674D23001369F2 /* GameView.swift in Sources */,
+				E9ED6C0A2A6873A500B3CC56 /* Manager+GKMatchmakerDelegate.swift in Sources */,
 				E99EF3272A673E48001369F2 /* StopMultiplayerApp.swift in Sources */,
 				E99EF3402A674232001369F2 /* Enums.swift in Sources */,
 				E99EF3452A674983001369F2 /* GameOverView.swift in Sources */,

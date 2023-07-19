@@ -9,7 +9,7 @@ import Foundation
 import GameKit
 import PencilKit
 
-final class MatchManager: ObservableObject {
+final class MatchManager: NSObject, ObservableObject {
     
     // game status
     @Published var isInGame: Bool = false
@@ -67,6 +67,24 @@ final class MatchManager: ObservableObject {
                 authenticationState = .unauthenticated
             }
         }
+    }
+    
+    // Creating the match
+    func startMatchMaking(){
+        let request = GKMatchRequest()
+        // Configurando o request
+        request.minPlayers = 2
+        request.maxPlayers = 2
+        // Criando o view controller e colocando o delegate
+        let matchVc = GKMatchmakerViewController(matchRequest: request)
+        matchVc?.matchmakerDelegate = self
+        // Present na tela
+        rootViewController?.present(matchVc!, animated: true)
+    }
+    
+    // Starting the match
+    func startMatch(newMatch: GKMatch){
+        match = newMatch
     }
     
 }
