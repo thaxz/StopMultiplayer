@@ -85,6 +85,13 @@ final class MatchManager: NSObject, ObservableObject {
     // Starting the match
     func startMatch(newMatch: GKMatch){
         match = newMatch
+        match?.delegate = self
+        // pegando o outro player
+        otherPlayer = match?.players.first
+        // gerando um prompt de desenho
+        drawPrompt = everydayObjects.randomElement()!
+        // decidindo assim quem vai primeiro
+        sendString("Began: \(playerUUIDKey)")
     }
     
 }
