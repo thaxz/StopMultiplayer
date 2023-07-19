@@ -37,6 +37,7 @@
 		E99EF3482A674D23001369F2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E99EF34B2A674DAC001369F2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E99EF34D2A6752E5001369F2 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		E99EF34F2A676614001369F2 /* StopMultiplayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StopMultiplayer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		E99EF3252A673E48001369F2 /* StopMultiplayer */ = {
 			isa = PBXGroup;
 			children = (
+				E99EF34F2A676614001369F2 /* StopMultiplayer.entitlements */,
 				E99EF3412A67473A001369F2 /* Extentions */,
 				E99EF33C2A673F8A001369F2 /* Utilities */,
 				E99EF3392A673F73001369F2 /* Managers */,
@@ -372,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StopMultiplayer/StopMultiplayer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StopMultiplayer/Preview Content\"";
@@ -401,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StopMultiplayer/StopMultiplayer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StopMultiplayer/Preview Content\"";
