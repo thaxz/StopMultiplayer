@@ -60,22 +60,28 @@ struct GameView: View {
 extension GameView {
     
     var topBar: some View {
-        HStack{
-            Button {
-                matchManager.match?.disconnect()
-                matchManager.resetGame()
-            } label: {
-                Image(systemName: "arrowshape.turn.up.left.circle.fill")
-                    .font(.largeTitle)
-                    .tint(matchManager.currentlyDrawing ? Color.theme.yellow : Color.theme.purple)
+        ZStack {
+            HStack{
+                Button {
+                    matchManager.match?.disconnect()
+                    matchManager.resetGame()
+                } label: {
+                    Image(systemName: "arrowshape.turn.up.left.circle.fill")
+                        .font(.largeTitle)
+                        .tint(matchManager.currentlyDrawing ? Color.theme.yellow : Color.theme.purple)
+                }
+                Spacer()
+                Label("\(matchManager.remainingTime)", systemImage: "clock.fill")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(matchManager.currentlyDrawing ? Color.theme.yellow : Color.theme.purple)
+                
             }
-            Spacer()
-            Label("\(matchManager.remainingTime)", systemImage: "clock.fill")
-                .font(.title2)
+            Text("Score: \(matchManager.score)")
                 .bold()
+                .font(.title)
                 .foregroundColor(matchManager.currentlyDrawing ? Color.theme.yellow : Color.theme.purple)
         }
-        
         .padding(.vertical, 15)
     }
     
