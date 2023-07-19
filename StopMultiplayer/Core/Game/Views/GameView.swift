@@ -165,7 +165,9 @@ extension GameView {
     // MARK: Funções
     
     func makeGuess(){
-        
+        guard drawingGuess != "" else {return}
+        matchManager.sendString("guess:\(drawingGuess)")
+        drawingGuess = ""
     }
     
 }

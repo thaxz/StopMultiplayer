@@ -18,7 +18,8 @@ struct DrawingView: UIViewRepresentable {
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-            // send drawing data
+            guard canvasView.isUserInteractionEnabled else {return}
+            matchManager.sendData(canvasView.drawing.dataRepresentation(), mode: .reliable)
         }
         
     }
@@ -38,6 +39,16 @@ struct DrawingView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
+        
+        let wasDrawing = canvasView.isUserInteractionEnabled
+        canvasView.isUserInteractionEnabled = matchManager.currentlyDrawing
+        if !wasDrawing && matchManager.currentlyDrawing {
+            canvasView.drawing = PKDrawing()
+        }
+        
+        if canvasView.isUserInteractionEnabled || !matchManager.isInGame {
+            canvasView.drawing = matchManager.lastReceivedDrawing
+        }
         canvasView.tool = eraserEnabled ? PKEraserTool(.vector) : PKInkingTool(.pen, color: .black, width: 5)
         
     }

@@ -22,7 +22,16 @@ final class MatchManager: NSObject, ObservableObject {
     
     // Pontuation and timer
     @Published var score = 0
-    @Published var remainingTime = maxTimeRemaining
+    @Published var remainingTime = maxTimeRemaining {
+        willSet{
+            if isTimeKeeper {
+                sendString("timer:\(newValue)")
+            }
+            if newValue < 0 {
+                gameOver()
+            }
+        }
+    }
     @Published var isTimeKeeper: Bool = false
     
     // Pencil data
@@ -118,8 +127,40 @@ final class MatchManager: NSObject, ObservableObject {
             if isTimeKeeper {
                 countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
             }
+        case "guess":
+            var guessCorrect = false
+            if parameter.lowercased() == drawPrompt {
+                sendString("correct:\(parameter)")
+                swapRoles()
+                guessCorrect = true
+            } else {
+                sendString("incorrect:\(parameter)")
+            }
+            appendPastGuess(guess: parameter, correct: guessCorrect)
+        case "correct":
+            appendPastGuess(guess: parameter, correct: true)
+        case "incorrect":
+            appendPastGuess(guess: parameter, correct: false)
+        case "timer":
+            remainingTime = Int(parameter) ?? 0
         default:
             break
         }
     }
+    
+    func swapRoles(){
+        
+    }
+    
+    func appendPastGuess(guess: String, correct: Bool){
+        pastGuesses.append(PastGuess(
+            message: "\(guess)\(correct ? " was correct!" : "")",
+            isCorrect: correct
+        ))
+    }
+    
+    func gameOver(){
+        
+    }
+    
 }
