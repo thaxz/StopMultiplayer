@@ -24,6 +24,9 @@ final class MatchManager: NSObject, ObservableObject {
     @Published var score = 0
     @Published var remainingTime = maxTimeRemaining
     
+    // Pencil data
+    @Published var lastReceivedDrawing = PKDrawing()
+    
     // state of auth
     @Published var authenticationState: PlayerAuthState = .authenticating
     
@@ -94,4 +97,8 @@ final class MatchManager: NSObject, ObservableObject {
         sendString("Began: \(playerUUIDKey)")
     }
     
+    // Received string
+    func receivedString(_ message: String){
+        
+    }
 }
