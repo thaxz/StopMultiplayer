@@ -149,7 +149,9 @@ final class MatchManager: NSObject, ObservableObject {
     }
     
     func swapRoles(){
-        
+        score += 1
+        currentlyDrawing = !currentlyDrawing
+        drawPrompt = everydayObjects.randomElement()!
     }
     
     func appendPastGuess(guess: String, correct: Bool){
@@ -160,7 +162,8 @@ final class MatchManager: NSObject, ObservableObject {
     }
     
     func gameOver(){
-        
+     isGameOver = true
+        match?.disconnect()
     }
     
 }
