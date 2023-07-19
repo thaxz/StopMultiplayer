@@ -28,7 +28,7 @@ struct GameView: View {
                     topBar
                     ZStack(alignment: .topTrailing){
                         DrawingView(eraserEnabled: $eraserEnabled)
-                            .environmentObject(MatchManager())
+                            .environmentObject(matchManager)
                             .aspectRatio(1, contentMode: .fit)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 10)

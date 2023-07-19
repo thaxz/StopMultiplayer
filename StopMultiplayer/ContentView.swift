@@ -7,15 +7,21 @@
 
 import SwiftUI
 
+//TODO: Refactor to make navigation with coordinator
+
 struct ContentView: View {
+    @EnvironmentObject var matchManager: MatchManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack{
+            if matchManager.isGameOver {
+                GameOverView()
+                    .environmentObject(matchManager)
+            } else if matchManager.isInGame {
+                GameView()
+                    .environmentObject(matchManager)
+            }
         }
-        .padding()
     }
 }
 
