@@ -12,7 +12,7 @@ struct StopMultiplayerApp: App {
     @StateObject private var matchManager = MatchManager()
     var body: some Scene {
         WindowGroup {
-            GameView()
+            ContentView()
                 .environmentObject(matchManager)
         }
     }

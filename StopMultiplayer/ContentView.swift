@@ -20,7 +20,13 @@ struct ContentView: View {
             } else if matchManager.isInGame {
                 GameView()
                     .environmentObject(matchManager)
+            } else {
+                MenuView()
+                    .environmentObject(matchManager)
             }
+        }
+        .onAppear{
+            matchManager.authenticateUser()
         }
     }
 }
