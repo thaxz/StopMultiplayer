@@ -29,7 +29,7 @@ struct GameOverView: View {
                 Spacer()
                 
                 Button {
-                    // do something
+                    matchManager.resetGame()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)

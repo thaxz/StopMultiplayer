@@ -122,7 +122,7 @@ final class MatchManager: NSObject, ObservableObject {
             currentlyDrawing = playerUUIDKey < parameter
             // Starting the game
             isInGame = true
-            isTimeKeeper = true
+            isTimeKeeper = currentlyDrawing
             // starting timer
             if isTimeKeeper {
                 countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -138,6 +138,7 @@ final class MatchManager: NSObject, ObservableObject {
             }
             appendPastGuess(guess: parameter, correct: guessCorrect)
         case "correct":
+            swapRoles()
             appendPastGuess(guess: parameter, correct: true)
         case "incorrect":
             appendPastGuess(guess: parameter, correct: false)
@@ -159,6 +160,23 @@ final class MatchManager: NSObject, ObservableObject {
             message: "\(guess)\(correct ? " was correct!" : "")",
             isCorrect: correct
         ))
+    }
+    
+    func resetGame(){
+        DispatchQueue.main.async { [self] in
+            isGameOver = false
+            isInGame = false
+            drawPrompt = ""
+            score = 0
+            remainingTime = maxTimeRemaining
+            lastReceivedDrawing = PKDrawing()
+        }
+        isTimeKeeper = false
+        match?.delegate = nil
+        match = nil
+        otherPlayer = nil
+        pastGuesses.removeAll()
+        playerUUIDKey = UUID().uuidString
     }
     
     func gameOver(){

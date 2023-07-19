@@ -62,7 +62,8 @@ extension GameView {
     var topBar: some View {
         HStack{
             Button {
-                // TODO: Disconnect from game
+                matchManager.match?.disconnect()
+                matchManager.resetGame()
             } label: {
                 Image(systemName: "arrowshape.turn.up.left.circle.fill")
                     .font(.largeTitle)
